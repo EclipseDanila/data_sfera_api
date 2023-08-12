@@ -10,7 +10,7 @@ class FetchSales {
         if (is_null($last_page)) {
             return 0;
         }
-        for ($i = 151; $i <= $last_page['meta']['last_page']; $i++) {
+        for ($i = 1; $i <= $last_page['meta']['last_page']; $i++) {
             $response = $fetch_json->handle('sales', $i);
             if (!is_null($response)) {
                 Sale::insert(
